@@ -55,7 +55,7 @@ def download_screenshots_of_reddit_posts(
     with sync_playwright() as p:
         print("Launching Headless Browser...")
 
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=False)
         context = browser.new_context()
         context.set_default_timeout(settings.comment_screenshot_timeout)
         if settings.theme == "dark":
